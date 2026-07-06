@@ -1,0 +1,236 @@
+PROGRAMME FINAL VALIDÉ
+Formation Python sur mesure pour analystes data Beobank
+
+Durée : 3 jours
+Format : présentiel
+Public cible : analystes de données, utilisateurs SAS, profils métier manipulant des données
+Nombre maximum de participants : 10 par groupe
+Dates retenues dans les échanges : 18 au 20 novembre 2026
+Environnement : laptops Beobank, Datalab Beobank, accès Vertica via USERID temporaire confirmé
+Approche pédagogique : alternance courte théorie / exercices immédiats / mini-projet fil rouge
+
+
+1. CADRAGE GÉNÉRAL
+
+Cette formation Python sur mesure est conçue pour des analystes data Beobank, notamment des profils venant de SAS. Elle ne vise pas à former des développeurs Python généralistes, mais à rendre les participants autonomes sur les usages Python utiles à l’analyse de données, au traitement de fichiers, à Pandas, aux séries temporelles, à Vertica SQL et à la visualisation simple.
+
+Le programme initial ORSYS de 3 jours est conservé comme base, mais il est recentré selon les retours Beobank. Les modules trop développeur, trop techniques ou déjà couverts par les formations internes Beobank sont retirés ou placés en option.
+
+
+2. OBJECTIFS PÉDAGOGIQUES
+
+À l’issue de la formation, les participants seront capables de :
+
+- Comprendre et écrire du code Python structuré pour des usages d’analyse de données.
+- Manipuler les structures fondamentales utiles aux analystes : listes, tuples, dictionnaires, fonctions, boucles, conditions et lambda expressions.
+- Lire, écrire et transformer des fichiers CSV, JSON et fichiers texte avec Python.
+- Charger des données dans Pandas, transformer des DataFrames, produire des traitements reproductibles et exporter les résultats.
+- Comprendre les flux de données entre fichiers, Pandas et Vertica : fichier vers DataFrame, DataFrame vers Vertica, Vertica vers DataFrame, puis export fichier.
+- Utiliser les fonctions analytiques utiles en Vertica SQL dans un contexte bancaire : CTE, fenêtres analytiques, fonctions de dates et navigation dans les schémas.
+- Manipuler les dates et séries temporelles : écarts entre dates, incrémentation mensuelle, périodes glissantes, début de période, calculs sur 13 mois.
+- Produire des visualisations simples avec Matplotlib : bar chart, line chart, pie chart.
+- Lire et comprendre du code Python généré par IA ou LLM, notamment dans un contexte de conversion SAS vers Python, sans faire de la programmation orientée objet un axe central.
+
+
+3. JOUR 1 — FONDAMENTAUX PYTHON UTILES AUX ANALYSTES
+
+3.1. Positionnement de Python pour analystes data
+
+- Différences entre logique SAS et logique Python.
+- Cas d’usage attendus chez Beobank : automatisation de traitements, manipulation de données, remplacement ou complément de scripts SAS, préparation de datasets, analyses récurrentes.
+- Bonnes pratiques de lisibilité et de structuration.
+
+3.2. Syntaxe Python essentielle
+
+- Identifiants, références et conventions de nommage.
+- Blocs, indentation, commentaires.
+- Rappels légers sur les types de données : numériques, chaînes, booléens.
+- Opérateurs logiques et opérateurs de comparaison, traités rapidement sous l’angle de leur écriture en Python.
+- Conditions : if, elif, else.
+- Boucles : for, while, range, break.
+
+3.3. Structures de données pratiques
+
+- Listes : création, indexation, ajout, suppression, parcours, filtrage.
+- Tuples : usage, immutabilité, cas d’emploi.
+- Dictionnaires : clés, valeurs, parcours, accès, transformation.
+- Cas pratiques orientés analystes : nettoyage simple, mapping de valeurs, regroupement logique, préparation de données.
+
+3.4. Fonctions et structuration du code
+
+- Définir une fonction.
+- Paramètres, arguments, valeurs de retour.
+- Documentation simple d’une fonction.
+- Définition claire des inputs et outputs.
+- Organisation en fonctions réutilisables.
+- Introduction aux lambda expressions avec cas d’usage simples.
+- Structuration minimale en modules, sans complexité développeur excessive.
+
+3.5. Exercices du jour 1
+
+- Exercices courts après chaque notion.
+- Manipulation de listes et dictionnaires.
+- Écriture de fonctions propres et documentées.
+- Petit exercice de transformation de données simulant une logique SAS simple vers Python.
+
+
+4. JOUR 2 — FICHIERS, PANDAS ET FLUX DE DONNÉES
+
+4.1. Gestion des fichiers
+
+- Lecture et écriture de fichiers avec open.
+- Utilisation de pathlib.
+- Lecture et écriture de fichiers texte.
+- Manipulation des formats CSV.
+- Manipulation des formats JSON.
+- Sérialisation et désérialisation de données.
+- Nettoyage simple de chaînes et formats textuels.
+- Expressions régulières : introduction courte uniquement si utile pour les cas pratiques.
+
+4.2. Introduction opérationnelle à Pandas
+
+- Création et lecture de DataFrames.
+- Chargement CSV / JSON vers Pandas.
+- Exploration d’un DataFrame : dimensions, colonnes, types, premières lignes, valeurs manquantes.
+- Sélection de colonnes et filtrage de lignes.
+- Création de colonnes calculées.
+- Tri, regroupement, agrégation.
+- Export de résultats.
+
+4.3. Flux Pandas ↔ Vertica
+
+- Chargement d’un fichier CSV ou JSON dans un DataFrame Pandas.
+- Préparation du DataFrame avant injection.
+- Injection d’un DataFrame vers Vertica selon les modalités techniques disponibles dans l’environnement Beobank.
+- Extraction Vertica vers DataFrame Pandas.
+- Export du DataFrame vers fichier.
+
+4.4. Connexion et exécution de requêtes
+
+- Principe général de connexion à une base relationnelle depuis Python.
+- Exécution de requêtes SQL simples depuis Python.
+- Récupération des résultats dans Pandas.
+- Adaptation au mode de connexion Vertica communiqué par Beobank.
+
+4.5. Exercices du jour 2
+
+- Lecture d’un CSV.
+- Transformation en DataFrame Pandas.
+- Contrôles simples de qualité de données.
+- Export JSON / CSV.
+- Flux DataFrame vers base ou simulation si l’accès Vertica complet n’est pas disponible.
+- Extraction SQL vers DataFrame.
+
+
+5. JOUR 3 — VERTICA SQL, TIME SERIES, PANDAS AVANCÉ ET VISUALISATION
+
+5.1. Vertica SQL pour analystes
+
+- CTE : structurer une requête lisible.
+- Fonctions analytiques : OVER, PARTITION BY.
+- Fonctions de navigation : LAG, LEAD.
+- Fonctions de dates : ADD_MONTHS, DATE_TRUNC, DATEDIFF.
+- Navigation dans les schémas SIDU, selon les accès réellement disponibles.
+- Cas d’usage : analyse temporelle, comparaison de périodes, préparation de données pour analyse bancaire.
+
+5.2. Pandas approfondi
+
+- Nettoyage de données.
+- Gestion des valeurs manquantes.
+- Conversions de types.
+- Jointures et concaténations.
+- GroupBy et agrégations.
+- Transformations de colonnes.
+- Application de fonctions.
+- Pipeline simple de traitement.
+
+5.3. Time series et gestion des dates
+
+- Conversion de colonnes en dates.
+- Calcul de différence entre deux dates en jours, mois et années.
+- Incrémentation d’une date au jour ou au mois.
+- Calcul du premier jour d’un mois.
+- Calcul d’une période complète sur 13 mois.
+- Filtrage sur périodes glissantes.
+- Agrégation par mois, trimestre ou année.
+
+5.4. Visualisation avec Matplotlib
+
+- Création d’un bar chart.
+- Création d’un line chart.
+- Création d’un pie chart.
+- Mise en forme minimale : titre, labels, légende, rotation d’axes.
+- Choix du bon graphique selon le type d’analyse.
+
+5.5. Mini-projet final
+
+Le mini-projet reprend l’ensemble de la chaîne :
+
+- Import d’un fichier CSV ou JSON.
+- Contrôle et nettoyage des données.
+- Transformation dans Pandas.
+- Traitement de dates et création d’indicateurs temporels.
+- Requête ou simulation Vertica SQL.
+- Extraction vers DataFrame.
+- Visualisation simple.
+- Export final du résultat.
+
+
+6. MODULES MAINTENUS UNIQUEMENT EN OPTION
+
+6.1. VS Code
+
+- Introduction rapide à VS Code sur Datalab uniquement si le temps le permet.
+- Le module n’est pas central.
+
+6.2. Programmation orientée objet
+
+- La programmation orientée objet n’est pas retenue comme axe principal.
+- Elle peut être abordée brièvement sous l’angle de la lecture et compréhension de code orienté objet généré par LLM dans un contexte de conversion SAS vers Python.
+- Pas d’approfondissement en conception objet.
+
+6.3. Environnement projet : pip, venv, uv
+
+- Sensibilisation courte possible.
+- Pas de séquence technique avancée.
+- Sujet conservé uniquement comme repère de culture projet Python.
+
+
+7. MODULES EXPLICITEMENT RETIRÉS
+
+- Installation et configuration du driver Vertica.
+- Appel de procédures stockées Vertica depuis Python.
+- Vérification des permissions via V_CATALOG.GRANTS.
+- Formation détaillée à l’environnement Datalab, car une session interne Beobank est prévue.
+- Approfondissement Jupyter Notebook.
+- Programmation orientée objet avancée.
+- Développement Python orienté développeur logiciel.
+
+
+8. DONNÉES ET ACCÈS
+
+- Accès Vertica : travail prévu avec USERID temporaire.
+- Accès SIDU : non garanti pour un formateur externe.
+- Données de formation : idéalement dataset fourni par Beobank, anonymisé ou représentatif.
+- À défaut, utilisation d’un dataset open source adapté au contexte bancaire ou analytique.
+- Le détail exact de la connexion Vertica dépendra des informations techniques fournies par Beobank.
+
+
+9. SYNTHÈSE FINALE
+
+Le programme validé n’est pas une formation Python généraliste. C’est une formation opérationnelle pour analystes data, pensée pour des profils venant de SAS et travaillant dans un environnement bancaire.
+
+La priorité est donnée à :
+
+- Python utile.
+- Exercices fréquents.
+- Fonctions et structures de données.
+- Fichiers CSV / JSON.
+- Pandas.
+- Vertica SQL.
+- Flux Pandas ↔ Vertica.
+- Dates et time series.
+- Visualisation simple.
+- Mini-projet de bout en bout.
+
+Les modules trop techniques, trop développeur ou déjà couverts par Beobank sont retirés ou placés en option.
